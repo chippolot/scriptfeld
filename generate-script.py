@@ -36,11 +36,9 @@ def generate_script():
 		last_speaker = speaker
 		print speaker
 
-		# choose num sentences
-		num_sentences = random.randint(MIN_SENTENCES_PER_UTTERANCE, MAX_SENTENCES_PER_UTTERANCE)
-		for j in range(num_sentences):
-			sentence = markov(dialogue_chains[speaker])
-			print sentence
+		# say something
+		sentence = markov(dialogue_chains[speaker])
+		print sentence
 
 		# seperator
 		print ""

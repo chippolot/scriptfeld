@@ -46,8 +46,10 @@ for filename in os.listdir('scripts'):
 
 		# store sentences for each speaker
 		character_dialogue[speaker] = character_dialogue.get(speaker, [])
+		sentence_list = []
 		for _, sentence in enumerate(sentences):
-			character_dialogue[speaker].append("BEGIN NOW " + sentence + " END")
+			sentence_list.append(sentence)
+		character_dialogue[speaker].append("BEGIN NOW " + " ".join(sentence_list) + " END")
 
 # generate markov chain data for all speaker sentences
 for speaker, sentences in character_dialogue.iteritems():
